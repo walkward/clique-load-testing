@@ -3,13 +3,20 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "config": {
+    "instance": "tester-1"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "forever start index.js",
+    "start:dev": "node index.js",
+    "deployment:create": "gcloud deployment-manager deployments create $npm_package_config_instance --template deployment.jinja --project darxe-1479577863758",
+    "deployment:delete": "echo 'y' | gcloud deployment-manager deployments delete $npm_package_config_instance --project darxe-1479577863758"
   },
   "author": "Walker Ward <walker.ward1@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "6.1.0",
+    "forever": "0.15.3",
     "request": "2.88.0"
   },
   "devDependencies": {
