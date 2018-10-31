@@ -18,7 +18,11 @@ interval = setInterval(() => {
         authorization: `Bearer ${process.env.APP_BEARER_TOKEN}`,
       },
     });
+
+    if (iterations % 100 === 0) {
+      console.log(`${iterations} iterations`);
+    }
   } catch (err) {
-    console.count('Error');
+    console.error(err);
   }
-}, 1);
+}, process.env.APP_ITERATION_INTERVAL);

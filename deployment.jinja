@@ -55,8 +55,9 @@ resources:
 
           # Setting environment variables
           APP_BEARER_TOKEN=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6InVzNWNjYTJlLTBkZDgtNGI5NS04Y2ZjLWExMTIzMGU3MzExNiJ9LCJpYXQiOjE1NDA5NDQ0MDAsImV4cCI6MTU0MTIwMzYwMH0.BIsLL869sgLoyiXprKwqS07n1cXa6OWCQd5esxNAL-6RkzwRHjffgehuHbabmXI_VOatwELqLeebdHEMXB1_aQ
-          APP_MAX_ITERATIONS=10
+          APP_MAX_ITERATIONS=none
           APP_TEST_ENDPOINT=https://api.cliqueqa.com/rest/users/us5cca2e-0dd8-4b95-8cfc-a11230e73116?include=customer.projects.rootFolder%2Ccollections%2Cgroups.collections
+          APP_ITERATION_INTERVAL=10
 
           # Install packages and start app
           npm install forever -g
