@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "config": {
-    "instance": "tester-5"
+    "instance": "tester-11",
+    "project": "darxe-1479577863758",
+    "zone": "us-central1-c"
   },
   "scripts": {
     "start": "forever start -o out.log -e err.log index.js",
     "start:dev": "node index.js",
-    "deployment:create": "gcloud deployment-manager deployments create $npm_package_config_instance --template deployment.jinja --project darxe-1479577863758",
-    "deployment:delete": "echo 'y' | gcloud deployment-manager deployments delete $npm_package_config_instance --project darxe-1479577863758"
+    "deployment:ssh": "gcloud compute --project $npm_package_config_project ssh --zone $npm_package_config_zone $npm_package_config_instance",
+    "deployment:create": "gcloud deployment-manager deployments create $npm_package_config_instance --template deployment.jinja --project $npm_package_config_project",
+    "deployment:delete": "echo 'y' | gcloud deployment-manager deployments delete $npm_package_config_instance --project $npm_package_config_project"
   },
   "author": "Walker Ward <walker.ward1@gmail.com>",
   "license": "MIT",

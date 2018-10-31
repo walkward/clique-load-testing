@@ -14,6 +14,7 @@ interval = setInterval(() => {
 
     request({
       uri: process.env.APP_TEST_ENDPOINT,
+      forever: false,
       headers: {
         authorization: `Bearer ${process.env.APP_BEARER_TOKEN}`,
       },
