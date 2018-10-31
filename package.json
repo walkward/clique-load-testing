@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "config": {
-    "instance": "tester-1"
+    "instance": "tester-5"
   },
   "scripts": {
     "start": "forever start -o out.log -e err.log index.js",
